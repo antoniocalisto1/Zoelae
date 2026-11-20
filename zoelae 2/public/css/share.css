@@ -1,0 +1,177 @@
+/* Viewer-facing gallery. Quieter and more generous than the collector app:
+   the point of this page is the work, not the interface. */
+
+body.viewer{background:var(--bg)}
+
+/* ---------- passcode gate ---------- */
+.gate{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px}
+.gate-card{width:100%; max-width:390px; text-align:center}
+.gate .lock{width:38px; height:38px; border-radius:0; background:var(--text); color:#fff;
+  display:grid; place-items:center; margin:0 auto 22px; font-size:16px}
+.gate h1{font-size:23px; letter-spacing:-.025em; margin:0 0 6px; line-height:1.3}
+.gate .owner{color:var(--muted); margin:0 0 28px}
+.gate form{display:flex; flex-direction:column; gap:10px}
+.gate .input{text-align:center; padding:11px}
+.gate .err{margin:2px 0 0; text-align:center}
+.gate .foot{margin-top:26px; color:var(--muted-2); font-size:12.5px; line-height:1.6}
+
+/* ---------- unavailable ---------- */
+.unavailable{min-height:100vh; display:grid; place-items:center; padding:40px 20px; text-align:center}
+.unavailable h1{font-size:21px; letter-spacing:-.02em; margin:0 0 8px}
+.unavailable p{color:var(--muted); margin:0; max-width:34ch}
+
+/* ---------- gallery ---------- */
+.gallery-head{max-width:1100px; margin:0 auto; padding:64px 28px 20px}
+.gallery-head .kicker{font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted-2); font-weight:600}
+.gallery-head h1{font-size:32px; letter-spacing:-.03em; margin:14px 0 0; font-weight:600; max-width:20ch; line-height:1.2}
+.gallery-head .intro{color:var(--muted); font-size:16px; margin:16px 0 0; max-width:56ch; white-space:pre-wrap}
+.gallery-head .count{color:var(--muted-2); font-size:13px; margin-top:22px}
+
+.gallery{max-width:1100px; margin:0 auto; padding:26px 28px 90px;
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:44px 34px}
+@media(max-width:640px){
+  .gallery{grid-template-columns:1fr; gap:36px; padding:20px 20px 60px}
+  .gallery-head{padding:40px 20px 12px}
+  .gallery-head h1{font-size:26px}
+}
+.piece{background:none; border:none; padding:0; text-align:left; cursor:pointer; width:100%}
+.piece .frame{background:#fff; border:1px solid var(--border); border-radius:0; padding:14px; box-shadow:0 2px 14px rgba(16,24,40,.05); transition:.2s}
+.piece:hover .frame{box-shadow:0 10px 34px rgba(16,24,40,.10); transform:translateY(-3px)}
+.piece img{width:100%; display:block; border-radius:0}
+.piece .cap{margin-top:14px}
+.piece .cap .t{font-weight:600; letter-spacing:-.01em; font-size:15px}
+.piece .cap .a{color:var(--muted); font-size:13.5px; margin-top:2px}
+.piece .cap .p{color:var(--text); font-size:13.5px; margin-top:6px; font-variant-numeric:tabular-nums}
+
+/* ---------- viewer detail ---------- */
+.vdetail{max-width:1100px; margin:0 auto; padding:26px 28px 90px}
+.vdetail .back{margin-bottom:22px}
+.vgrid{display:grid; grid-template-columns:minmax(0,1.45fr) minmax(280px,1fr); gap:44px; align-items:start}
+@media(max-width:860px){.vgrid{grid-template-columns:1fr; gap:28px}}
+.vstage{background:#fff; border:1px solid var(--border); border-radius:0; padding:18px; box-shadow:0 2px 14px rgba(16,24,40,.05)}
+.vstage img{width:100%; display:block; border-radius:0}
+.carousel{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:14px}
+.carousel .dots{display:flex; gap:7px; flex:1; justify-content:center}
+.carousel .dot{width:7px; height:7px; border-radius:50%; background:var(--border-strong); border:none; padding:0}
+.carousel .dot.active{background:var(--text)}
+.carousel .nav{border:1px solid var(--border-strong); background:#fff; border-radius:0; padding:5px 11px; color:var(--muted)}
+.carousel .nav:hover{color:var(--text)}
+.vmeta h2{font-size:27px; letter-spacing:-.03em; margin:0 0 6px; line-height:1.2; font-weight:600}
+.vmeta .byline{color:var(--muted); font-size:16px; margin:0 0 26px}
+.vsect{margin-bottom:26px}
+.vsect h3{font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted-2); font-weight:650; margin:0 0 10px}
+.vrow{display:flex; justify-content:space-between; gap:20px; padding:7px 0; border-bottom:1px solid #eeefF2}
+.vrow:last-child{border-bottom:none}
+.vrow span{color:var(--muted)}
+.vrow b{font-weight:600; text-align:right}
+.vtext{white-space:pre-wrap; color:var(--text)}
+.vtext + .vtext{margin-top:10px}
+.noselect img{-webkit-user-drag:none; user-select:none; pointer-events:none}
+.viewer-foot{max-width:1100px; margin:0 auto; padding:0 28px 60px; color:var(--muted-2); font-size:12.5px}
+
+.gallery-head h1{font-family:var(--display); font-weight:500; letter-spacing:-.016em}
+
+
+/* ---------- Private View ---------- */
+#viewerBrush{position:fixed; inset:0; width:100%; height:100%; display:block; z-index:0}
+#viewerBrush[hidden]{display:none}
+#root{position:relative; z-index:1}
+.gate{flex-direction:column}
+.gate-card{position:relative; max-width:420px; padding:40px 32px 30px; transform:rotate(-.8deg)}
+.gate-card .pv-kicker{margin-bottom:10px}
+.gate h1{font-family:var(--display); font-weight:500; font-size:32px; letter-spacing:-.02em; line-height:1.1}
+.gate .owner{color:var(--ink-2)}
+.gate .input{font-size:18px; letter-spacing:.2em; border-radius:0; background:#fffefb}
+.gate .input::placeholder{letter-spacing:.04em}
+.gate .input:focus{border-color:var(--ink); box-shadow:0 0 0 3px rgba(27,24,20,.09)}
+.gate .btn{padding:13px 20px; font-size:15px}
+.gate .err{color:var(--pencil)}
+.gate .foot{color:var(--ink-3)}
+.gate-sticker{position:absolute; width:76px; right:-26px; top:-30px}
+.gate-note{position:absolute; left:16px; bottom:-34px; transform:rotate(-3deg)}
+.gate-mark{position:fixed; left:0; right:0; bottom:18px; display:flex; justify-content:center; z-index:1}
+.vmark{display:inline-flex; align-items:center; gap:7px; color:var(--ink-3); font-size:12.5px; padding:5px 12px; border-radius:0; background:rgba(243,239,231,.85)}
+.vmark:hover{color:var(--ink)}
+.viewer-foot .vmark{margin-left:12px; background:none; padding:0}
+
+.unavailable > .pv-slip{position:relative; max-width:440px; padding:38px 32px 34px; transform:rotate(-.8deg)}
+.unavailable h1{font-family:var(--display); font-weight:500; font-size:30px; letter-spacing:-.02em}
+.unavailable p:not(.pv-kicker){color:var(--ink-2); margin:0 auto}
+.unavailable .pv-note{position:absolute; right:18px; bottom:-32px; transform:rotate(-3deg)}
+
+.gallery-head h1{font-size:clamp(34px,5vw,54px); line-height:1.05; max-width:22ch}
+.gallery-head .intro{color:var(--ink-2)}
+.piece .frame{background:var(--paper); border:none; padding:12px; box-shadow:0 14px 30px -22px rgba(40,32,20,.6), 0 1px 2px rgba(40,32,20,.08)}
+.piece:nth-child(3n+1) .frame{transform:rotate(-.5deg)}
+.piece:nth-child(3n+2) .frame{transform:rotate(.4deg)}
+.piece:hover .frame{transform:translateY(-4px) rotate(0); box-shadow:var(--slip-shadow)}
+.piece .cap .t{font-family:var(--display); font-weight:500; font-size:18px}
+.vstage{background:var(--paper); border:none; box-shadow:var(--slip-shadow)}
+.vstage img{height:auto}
+.vmeta h2{font-family:var(--display); font-weight:500; font-size:34px; letter-spacing:-.02em}
+.vrow{border-bottom-color:var(--line)}
+@media (max-width:520px){
+  .gate-card,.unavailable > .pv-slip{transform:none; padding:34px 22px 26px}
+  .gate-sticker{right:-6px; top:-34px; width:62px}
+}
+.dot{display:inline-block; width:9px; height:9px; border-radius:50%; vertical-align:middle}
+.dot.for_sale{background:var(--viridian)}
+.dot.sold{background:var(--cadmium)}
+.piece .frame{position:relative}
+.sold-dot{position:absolute; right:-6px; top:-6px; width:18px; height:18px; border-radius:50%; background:var(--cadmium);
+  box-shadow:0 0 0 2px var(--paper), 0 2px 6px rgba(40,32,20,.3); z-index:1}
+.avail{display:flex; align-items:center; gap:7px; font-weight:600}
+.avail.sold{color:var(--cadmium)}
+.avail.sale{color:var(--viridian)}
+.vmeta .avail{margin:-14px 0 22px}
+.noimage-slab{aspect-ratio:4/3; display:flex; align-items:center; justify-content:center;
+  background:repeating-linear-gradient(135deg, var(--sunken) 0 12px, var(--surface-2) 12px 24px)}
+.noimage-slab p{margin:0; font-family:var(--display); font-size:20px; color:var(--ink-2)}
+
+/* ==========================================================================
+   The viewer in the Atelier design (formerly share-atelier.css)
+   ========================================================================== */
+
+/* The shared-link viewer in the Atelier design.
+   The gate is a white card on the warm band; the gallery is a white wall with each work hung
+   unframed, a wall label under it and a red dot when it has sold. */
+
+body.viewer{background:var(--bg); font-family:var(--sans)}
+body.viewer.at-gate{background:var(--band)}
+.gate-card,.unavailable > .pv-slip{transform:none; background:#fff; border:1px solid var(--line); padding:48px 40px 38px}
+.gate h1,.unavailable h1{font-family:var(--display); font-weight:300; font-size:clamp(34px,5vw,44px); line-height:1.05; letter-spacing:0}
+.gate .input{background:#fff; font-size:18px}
+.gate .btn{padding:15px 20px; font-size:12.5px; letter-spacing:.09em; text-transform:uppercase}
+.vmark{background:none; gap:10px; font-size:12px}
+.vmark .wordmark{font-size:13px; color:var(--ink-2)}
+
+.gallery-head{max-width:1200px; padding:80px 40px 26px}
+.gallery-head .kicker{font-size:11px; letter-spacing:.26em; font-weight:500; color:var(--ink-3)}
+.gallery-head h1{font-family:var(--display); font-weight:300; font-size:clamp(42px,6vw,72px); line-height:1; letter-spacing:-.01em}
+.gallery{max-width:1200px; padding:40px 40px 100px; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:64px 44px}
+.piece .frame,.piece:nth-child(3n+1) .frame,.piece:nth-child(3n+2) .frame{background:none; border:none; padding:0; box-shadow:none; transform:none}
+.piece img{box-shadow:var(--shadow-art)}
+.piece:hover .frame{transform:translateY(-3px); box-shadow:none}
+.piece .cap{margin-top:18px}
+.piece .cap .t{font-family:var(--display); font-style:italic; font-weight:400; font-size:21px; line-height:1.2}
+.piece .cap .a{font-size:12.5px; color:var(--ink-2)}
+.piece .cap .p{font-size:12.5px}
+.sold-dot{right:12px; top:auto; bottom:12px; width:12px; height:12px; background:var(--sold); box-shadow:0 0 0 3px rgba(250,249,247,.85)}
+.dot.for_sale{background:transparent; box-shadow:inset 0 0 0 1.5px var(--ink)}
+.dot.sold{background:var(--sold)}
+.avail{font-weight:400}
+.avail.sold{color:var(--sold-ink)}
+.avail.sale{color:var(--ink)}
+
+.vdetail{max-width:1200px; padding:30px 40px 100px}
+.vstage{background:var(--band); border:none; box-shadow:none; padding:32px}
+.vstage img{box-shadow:var(--shadow-art)}
+.vmeta h2{font-family:var(--display); font-style:italic; font-weight:400; font-size:clamp(34px,4vw,46px); line-height:1.08; letter-spacing:0}
+.vsect h3{font-size:11px; letter-spacing:.2em; font-weight:500}
+.carousel .nav{border-radius:0}
+@media(max-width:640px){
+  .gallery-head{padding:48px 20px 12px}
+  .gallery{padding:24px 20px 70px; gap:44px}
+  .vdetail{padding:20px 20px 70px}
+  .gate-card,.unavailable > .pv-slip{padding:34px 22px 26px}
+}

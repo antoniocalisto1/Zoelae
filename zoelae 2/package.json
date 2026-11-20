@@ -1,0 +1,37 @@
+{
+  "name": "zoelae",
+  "version": "3.0.2",
+  "buildName": "zoelae-v3.0.2-launch",
+  "private": true,
+  "description": "Zoelae — a private catalogue for art. Collectors, artists and galleries record their works, add whole folders of photographs, and share chosen works behind a passcode.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "migrate": "node server/migrate.js",
+    "reset": "node server/reset.js",
+    "backup": "node server/backup.js",
+    "import": "node server/import-folder.js",
+    "verify": "node test/verify.js",
+    "live": "node test/live.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.6.0",
+    "cookie-parser": "^1.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.22.2",
+    "fflate": "^0.8.3",
+    "multer": "^2.4.0",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

@@ -1,0 +1,150 @@
+/* Zoelae — one palette for the whole site: the Atelier design.
+   A white-cube gallery: warm white walls, near-black ink, hairline rules, square corners.
+   Cormorant Garamond (light) for anything with a name, Inter for everything you read.
+   One colour beyond ink: the red dot a gallery puts beside a sold work.
+
+   Two naming schemes point at the same values: the public pages use
+   --ground / --ink / --line, the app uses --bg / --text / --border. */
+
+/* Fonts are served from this site, not a font service, so no visitor's address leaves for a third party.
+   Three variable files cover every weight used, in Latin and Latin Extended (Věra, Łódź, Dvořák). */
+@font-face{font-family:"Cormorant Garamond"; font-style:normal; font-weight:300 500; font-display:swap; src:url('/fonts/cormorant-garamond.woff2') format('woff2')}
+@font-face{font-family:"Cormorant Garamond"; font-style:italic; font-weight:300 500; font-display:swap; src:url('/fonts/cormorant-garamond-italic.woff2') format('woff2')}
+@font-face{font-family:Inter; font-style:normal; font-weight:400 600; font-display:swap; src:url('/fonts/inter.woff2') format('woff2')}
+
+:root{
+  /* walls and paper */
+  --bg:#faf9f7;
+  --surface:#ffffff;
+  --surface-2:#f6f4f0;
+  --sunken:#efece7;
+  --band:#f3f1ed;
+
+  /* rules */
+  --border:#e6e2dc;
+  --line-soft:#efece7;
+  --border-strong:#d6d1c9;
+
+  /* ink */
+  --text:#141311;
+  --text-2:#5f5a52;
+  --muted:#8a847b;
+  --muted-2:#a39d93;
+
+  /* there is no colour accent: ink is the accent */
+  --accent:#141311;
+  --accent-hover:#000000;
+  --accent-soft:#f3f1ed;
+  --accent-line:#e6e2dc;
+  --accent-ink:#141311;
+  --umber:#8a847b;
+
+  /* the red dot, and the states */
+  --sold:#b3342a;
+  --sold-ink:#9b2c22;
+  --danger:#9b2c22;
+  --danger-soft:#f7ece9;
+  --danger-line:#e5c9c3;
+  --success:#3f5a46;
+  --success-soft:#eef1ec;
+  --warn:#7a5a1c;
+  --warn-soft:#f6f1e6;
+  --warn-line:#e4d8bd;
+
+  /* dark band and materials */
+  --ink-panel:#141311;
+  --ink-panel-2:#24221f;
+  --on-ink:#f3f1ed;
+  --on-ink-2:#b5afa5;
+  --mat:rgba(250,249,247,.86);
+  --mat-heavy:rgba(250,249,247,.95);
+  --scrim:rgba(20,19,17,.42);
+  --ring:rgba(20,19,17,.10);
+
+  --radius:0px;
+  --shadow:none;
+  --shadow-art:0 30px 46px -34px rgba(20,19,17,.55);
+  --shadow-lg:0 18px 50px -20px rgba(20,19,17,.28), 0 1px 2px rgba(20,19,17,.06);
+  --shadow-xl:0 30px 80px -24px rgba(20,19,17,.35), 0 2px 6px rgba(20,19,17,.06);
+  --ease-out:cubic-bezier(.2,.8,.2,1);
+  --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:1280px;
+
+  /* names the public pages use */
+  --ground:var(--bg);
+  --paper:var(--surface);
+  --ink:var(--text);
+  --ink-2:var(--text-2);
+  --ink-3:var(--muted);
+  --line:var(--border);
+  --line-strong:var(--border-strong);
+}
+
+/* ==========================================================================
+   Materials shared by every page (formerly pv.css)
+   ========================================================================== */
+
+/* Atelier — the materials every page shares, public and signed in.
+   Square ink buttons, white cards with a hairline, small-caps labels, the wall label under a
+   work, and the spaced-capitals wordmark. The class names are the ones the Private View design
+   introduced (pv-*), so every page picks up the new look without its markup changing. */
+
+/* Names the earlier design used, pointed at the Atelier palette so older rules still read well. */
+:root{
+  --cadmium:var(--sold);
+  --pencil:var(--danger);
+  --viridian:var(--ink);
+  --ochre:var(--ink-3);
+  --ultramarine:var(--ink);
+  --tape:transparent;
+  --slip-shadow:none;
+}
+
+/* ---------- the wordmark ---------- */
+.wordmark{display:inline-block; font-family:var(--display); font-weight:500; font-size:21px; line-height:1;
+  letter-spacing:.34em; margin-right:-.34em; text-transform:uppercase; color:var(--ink); white-space:nowrap}
+.wordmark.sm{font-size:16px}
+
+/* ---------- buttons: square ink ---------- */
+.btn{border-radius:0; font-family:var(--sans)}
+.btn-primary,.btn.btn-primary{background:var(--ink); border-color:var(--ink); color:var(--bg)}
+.btn-primary:hover,.btn.btn-primary:hover{background:#000; border-color:#000; color:#fff}
+.btn-primary:disabled{opacity:.5}
+.btn.pill{padding:15px 28px; font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:500}
+.btn.caps{font-size:12px; letter-spacing:.09em; text-transform:uppercase; font-weight:500}
+.textlink{color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:2px}
+.textlink:hover{color:var(--ink-2); border-bottom-color:var(--ink-2)}
+
+/* ---------- a card on the wall ---------- */
+.pv-slip{position:relative; background:var(--paper); border:1px solid var(--line)}
+.pv-slip.tilt,.pv-slip.tilt-r{transform:none}
+.pv-tape::before{content:none}
+
+/* emphasis without the pencil */
+.pv-mark{color:var(--ink)}
+.pv-mark svg{display:none}
+.pv-note{font-family:var(--display); font-style:italic; color:var(--ink-3); font-size:19px; line-height:1.2}
+.pv-sticker{display:none}
+
+/* ---------- labels ---------- */
+.pv-kicker{font-size:11px; letter-spacing:.26em; text-transform:uppercase; font-weight:500; color:var(--ink-3); margin:0 0 22px}
+/* Sample artworks on public pages are invented. They always say so. */
+.pv-example{position:relative; display:block}
+.pv-example::after{
+  content:"Example"; position:absolute; left:10px; top:10px; padding:3px 8px;
+  background:rgba(250,249,247,.92); color:var(--ink-2); font-size:10px; font-weight:500; letter-spacing:.18em; text-transform:uppercase;
+}
+.pv-caption{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted-2); margin:40px 0 0}
+
+/* the label beside a work on a gallery wall */
+.wall-label{margin-top:20px; font-size:12px; line-height:1.7; color:var(--ink-2)}
+.wall-label .wl-title{display:block; font-family:var(--display); font-style:italic; font-size:18px; color:var(--ink)}
+.wall-label .wl-note{color:var(--muted-2)}
+
+/* the red dot */
+.red-dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--sold); vertical-align:middle}
+.open-dot{display:inline-block; width:8px; height:8px; border-radius:50%; border:1px solid var(--ink); vertical-align:middle}
+
+/* Draft legal pages carry a banner until a lawyer has read them. */
+.pv-draft{background:var(--warn-soft); border:1px solid var(--warn-line); color:var(--warn); padding:12px 16px; font-size:14px}

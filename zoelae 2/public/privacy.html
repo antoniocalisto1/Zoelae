@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-site="{{SITE}}" data-place="{{PLACE}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · {{SITE}}</title>
+<meta name="description" content="How {{SITE}} handles your information.">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="site-header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="/" id="brandLink" aria-label="{{SITE}} home"></a>
+    <div class="site-actions">
+      <a class="navlink" href="/app?mode=login" id="loginLink">Sign in</a>
+      <a class="btn btn-sm btn-outline" href="/app?mode=signup" id="signupLink">Create an account</a>
+    </div>
+  </div>
+</header>
+
+<main class="doc">
+  <p class="pv-kicker">Privacy</p>
+  <h1>How {{SITE}} handles your information</h1>
+  <p class="updated">Draft, October 2026</p>
+  <p class="pv-draft"><strong>Draft for review.</strong> This page describes how the software works today. Before {{SITE}} opens to the public it needs a lawyer's review, the operator's legal name and address, and confirmation of where the servers are. Highlighted parts are placeholders.</p>
+
+  <h2>Who runs {{SITE}}</h2>
+  <p>{{SITE}} is run by <span class="todo">[legal name of the person or company]</span>, <span class="todo">[address]</span>. For anything about your data, write to <span class="todo">[privacy email address]</span>.</p>
+
+  <h2>What we keep</h2>
+  <ul>
+    <li><b>Your account:</b> your name, email address, a one-way hash of your password, your time zone, the account type you chose, and when you last signed in.</li>
+    <li><b>Your catalogue:</b> everything you enter about your works, the images and documents you upload, and the shared links you create.</li>
+    <li><b>Shared link activity:</b> when a link was opened, whether the passcode was right, a hashed form of the visitor's network address that can't be turned back into the address, and the type of browser.</li>
+  </ul>
+  <p>Images are cleaned when you upload them. Location, camera and date information recorded by phones and cameras is removed before anything is stored.</p>
+
+  <h2>What we use it for</h2>
+  <p>To run your account and show your catalogue to you and to the people you share it with, within the limits you set. We send email only for your account: password resets and notices that your password changed. There is no advertising, no tracking pixels and no selling of data.</p>
+
+  <h2>Who else sees it</h2>
+  <p>Nobody sees your catalogue unless you create a shared link, and then only the works and fields you chose, for as long as the link is valid. Fields you switch off are removed on the server and never sent to the viewer.</p>
+  <p>{{SITE}} relies on a small number of providers to run: <span class="todo">[hosting provider and region]</span> to host the site and its files, and <span class="todo">[email provider]</span> to deliver account emails. They process data only to provide that service.</p>
+
+  <h2>How long we keep it</h2>
+  <p>As long as you have an account. When you delete your account, your records, images, documents and shared links are deleted straight away. Copies in backups are overwritten within <span class="todo">[number]</span> days.</p>
+
+  <h2>Your rights</h2>
+  <p>You can download everything in your account at any time from the account menu, correct anything by editing it, and delete your account yourself. If you are in the European Union or the United Kingdom you also have the rights the GDPR gives you, including the right to complain to your data protection authority.</p>
+
+  <h2>Cookies</h2>
+  <p>{{SITE}} uses two kinds of cookie, both needed for the site to work: one that keeps you signed in, and one that remembers a viewer has entered a shared link's passcode. There are no analytics or advertising cookies.</p>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="brand" href="/" id="footerBrand" aria-label="{{SITE}} home"></a>
+    <span>Designed and built in {{PLACE}}</span>
+    <nav aria-label="Footer">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/app?mode=login">Sign in</a>
+    </nav>
+  </div>
+</footer>
+<script type="module" src="/js/page.js"></script>
+</body>
+</html>

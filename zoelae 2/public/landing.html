@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-site="{{SITE}}" data-place="{{PLACE}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{SITE}} — a private catalogue for art</title>
+<meta name="description" content="Record every work you own, make or represent. Share a chosen few behind a passcode, and decide field by field what each person may see.">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="/" id="brandLink" aria-label="{{SITE}} home"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="navlink hide-sm" href="#how">How it works</a>
+      <a class="navlink hide-sm" href="#sharing">Sharing</a>
+      <a class="navlink hide-sm" href="#galleries">For galleries</a>
+      <a class="navlink hide-sm" href="#faq">Questions</a>
+    </nav>
+    <div class="site-actions">
+      <a class="navlink" href="/app?mode=login" id="loginLink">Sign in</a>
+      <a class="btn btn-sm btn-outline" href="/app?mode=signup" id="signupLink">Create an account</a>
+    </div>
+  </div>
+</header>
+
+<div class="lp-notice" id="deletedNotice" hidden role="status">
+  Your account and everything in it has been deleted.
+</div>
+
+<main class="lp">
+
+  <!-- hero -->
+  <section class="lp-hero wrap" id="top">
+    <div class="lp-hero-copy">
+      <p class="pv-kicker">A private catalogue for art</p>
+      <h1 class="lp-h1">The art you live with, <em>kept in private.</em></h1>
+      <p class="lp-lede">Record every work you own, make or represent. Share a chosen few behind a passcode, and decide field by field what each person may see.</p>
+      <div class="lp-cta">
+        <a class="btn btn-primary pill" href="/app?mode=signup">Create an account</a>
+        <a class="textlink" href="#how">How it works</a>
+      </div>
+      <p class="lp-small">Free to use. No plans to choose and no card to enter.</p>
+    </div>
+    <figure class="lp-hero-art">
+      <span class="pv-example"><img src="/img/examples/crimson.webp" alt="An example painting: a red colour field over a darker band" width="880" height="1100"></span>
+      <figcaption class="wall-label">
+        <span class="wl-title">Untitled (Crimson), 2019</span>
+        Oil on linen · 125 × 100 cm<br>
+        <span class="wl-note">Example work, made for this page</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- how it works -->
+  <section class="wrap lp-steps" id="how" aria-label="How it works">
+    <div class="lp-step">
+      <p class="lp-num" aria-hidden="true">I</p>
+      <h2>Catalogue</h2>
+      <p>A photograph and whatever you know: artist, year, medium, what it cost, what it is worth, where it hangs. Drop in a whole folder of photographs and describe each one in turn, or bring a stock list in from a spreadsheet.</p>
+    </div>
+    <div class="lp-step">
+      <p class="lp-num" aria-hidden="true">II</p>
+      <h2>Share</h2>
+      <p>Choose the works and the fields. Set a passcode, an expiry date and a limit on views. What you hide is never sent at all.</p>
+    </div>
+    <div class="lp-step">
+      <p class="lp-num" aria-hidden="true">III</p>
+      <h2>Keep</h2>
+      <p>Every opening is logged. Links switch off in one click. Take everything with you, or delete it all, whenever you like.</p>
+    </div>
+  </section>
+
+  <!-- the wall -->
+  <section class="lp-band">
+    <div class="wrap">
+      <div class="lp-split-head">
+        <h2 class="lp-h2">Every work, and where it stands.</h2>
+        <p>In the collection, for sale or sold. A red dot marks a sale, as it would on a gallery wall, and the buyer stays on record.</p>
+      </div>
+      <div class="lp-wall">
+        <figure>
+          <span class="pv-example"><img src="/img/examples/ochre.webp" alt="An example painting in ochre and umber" width="880" height="1100" loading="lazy"></span>
+          <figcaption><span><i>Harvest, Late</i><br>Oil on canvas · 2021</span><span class="st"><span class="open-dot" aria-hidden="true"></span>For sale</span></figcaption>
+        </figure>
+        <figure>
+          <span class="pv-example"><img src="/img/examples/horizon.webp" alt="An example photograph of a pale grey horizon" width="1100" height="786" loading="lazy"></span>
+          <figcaption><span><i>Horizon, Atlantic</i><br>Archival pigment print · 2018</span><span class="st">In the collection</span></figcaption>
+        </figure>
+        <figure>
+          <span class="pv-example"><img src="/img/examples/sage.webp" alt="An example painting in two sage greens" width="880" height="1100" loading="lazy"></span>
+          <figcaption><span><i>Green Room</i><br>Acrylic on linen · 2016</span><span class="st sold"><span class="red-dot" aria-hidden="true"></span>Sold</span></figcaption>
+        </figure>
+      </div>
+      <p class="pv-caption">Example works, made for this page. Nobody's collection is shown here.</p>
+    </div>
+  </section>
+
+  <!-- sharing -->
+  <section class="wrap lp-sharing" id="sharing">
+    <div class="lp-sharing-copy">
+      <p class="pv-kicker">Sharing</p>
+      <h2 class="lp-h2">Shown only to the people you choose.</h2>
+      <p>Send an insurer two works without their prices. Send a client the new works for a month. Each link has its own passcode, its own works and its own visible fields.</p>
+      <ul class="lp-rules">
+        <li><b>Field by field.</b> Price, valuation, provenance, location and documents each switch on or off.</li>
+        <li><b>On a timer.</b> A link can expire on a date, or after a set number of views.</li>
+        <li><b>Gone when you say.</b> Revoke a link and it stops working at once.</li>
+      </ul>
+    </div>
+    <div class="lp-linkcard" aria-label="An example shared link">
+      <p class="t">For Clara — October</p>
+      <p class="s">Four works · created today</p>
+      <div class="r"><span>Prices</span><span>Shown</span></div>
+      <div class="r"><span>Provenance</span><span>Shown</span></div>
+      <div class="r"><span>Location</span><span class="off">Hidden</span></div>
+      <div class="r"><span>Documents</span><span class="off">Hidden</span></div>
+      <div class="r"><span>Expires</span><span>In 30 days</span></div>
+      <div class="r"><span>Opened</span><span>3 of 10 views</span></div>
+    </div>
+  </section>
+
+  <!-- galleries and artists -->
+  <section class="lp-dark" id="galleries">
+    <div class="wrap">
+      <p class="pv-kicker">For galleries and artists</p>
+      <h2 class="lp-h2">From the stock list to the client, without the spreadsheet in between.</h2>
+      <div class="lp-dark-grid">
+        <div><h3>Bring everything in</h3><p>A folder of photographs, or an Excel or CSV stock list with your own column names. Every image is resized and cleaned of location data.</p></div>
+        <div><h3>Keep a client list</h3><p>Who each person is, what they collect, what they have bought, and everything you have sent them.</p></div>
+        <div><h3>Send a private view</h3><p>A passcode link, or a PDF with one work to a page. Replies come straight back to you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- private by design -->
+  <section class="wrap lp-private" id="trust">
+    <h2 class="lp-h2 sm">Private by design</h2>
+    <div class="lp-facts">
+      <div><h3>Nothing public</h3><p>No profile, no public page, nothing for a search engine to find.</p></div>
+      <div><h3>Hidden means never sent</h3><p>Fields you switch off are removed on the server, before anything reaches a viewer.</p></div>
+      <div><h3>Location data removed</h3><p>Phone photographs can record where they were taken. {{SITE}} strips it on upload.</p></div>
+      <div><h3>Locked against guessing</h3><p>Passwords and passcodes are stored as one-way hashes. Repeated wrong guesses lock the door.</p></div>
+      <div><h3>Every opening logged</h3><p>See when a link was opened, and every wrong passcode.</p></div>
+      <div><h3>Yours to take, or delete</h3><p>One file with every record, image and document. Or everything gone, files included.</p></div>
+    </div>
+  </section>
+
+  <!-- three ways in -->
+  <section class="lp-band" id="accounts">
+    <div class="wrap">
+      <div class="lp-split-head">
+        <h2 class="lp-h2">Three ways in.</h2>
+        <p>Choose the account that fits what you do with art. The catalogue underneath is the same, and you can change your mind later in settings.</p>
+      </div>
+      <div class="lp-types" id="typeCards"></div>
+    </div>
+  </section>
+
+  <!-- questions -->
+  <section class="wrap lp-faq" id="faq">
+    <h2 class="lp-h2 sm">Before you hand anything over</h2>
+    <div class="lp-qs">
+      <details>
+        <summary>Who can see my collection?</summary>
+        <p>Nobody, until you make a shared link. A link shows only the works you put in it and only the fields you switched on, to someone who has the passcode, until it expires or you revoke it. There's no public profile and nothing for a search engine to find.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>Nothing. {{SITE}} is free to use, with no plans to choose and no card to enter. If that ever changes you will hear well before, and you can take everything out at any point.</p>
+      </details>
+      <details>
+        <summary>Can I add a whole folder of photographs?</summary>
+        <p>Yes. Choose a folder, or drag it in, and every photograph becomes a work waiting for its details. Then go through them one by one: title, artist, year, medium, size, price. Anything you skip waits for you in the collection.</p>
+      </details>
+      <details>
+        <summary>What can I upload?</summary>
+        <p>Photographs as JPEG, PNG, WebP or GIF, up to 25 MB each, plus certificates, invoices and condition reports as PDFs or images. Each photo is turned the right way up, cleaned of location and camera data, and given a smaller copy so your collection loads quickly.</p>
+      </details>
+      <details>
+        <summary>Can I get everything back out?</summary>
+        <p>Yes. One click in your account downloads a single file with every record, every image at full size and every document, in a folder for each work, with a spreadsheet of the whole catalogue.</p>
+      </details>
+      <details>
+        <summary>What if I forget my password?</summary>
+        <p>Ask for a reset link on the sign-in page. It's emailed to you, works once, and expires after an hour. Changing your password signs you out everywhere else.</p>
+      </details>
+      <details>
+        <summary>What happens when I delete my account?</summary>
+        <p>Your records, images, documents and shared links are removed straight away, and every shared link stops working. Nothing is kept for later.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- who's behind it -->
+  <section class="wrap lp-about" id="about">
+    <p class="pv-kicker">Who's behind it</p>
+    <!-- Antonio: this is the one place on the page written in your voice. Replace the second
+         paragraph with your own reason for making Zoelae; a sentence or two is enough. -->
+    <h2 class="lp-h2 sm">Made in {{PLACE}}</h2>
+    <p>{{SITE}} is designed and built in {{PLACE}} by Antonio Calisto.</p>
+    <p>It's a small, independent project. If something isn't right, or there's a feature you need, you'll be talking to the person who makes it.</p>
+  </section>
+
+  <!-- last word -->
+  <section class="lp-last">
+    <h2>Begin with one work.</h2>
+    <p>Add the rest when you have an afternoon, or bring a whole folder in at once.</p>
+    <a class="btn btn-primary pill" href="/app?mode=signup">Create an account</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="brand" href="/" id="footerBrand" aria-label="{{SITE}} home"></a>
+    <span>Designed and built in {{PLACE}}</span>
+    <nav aria-label="Footer">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/app?mode=login">Sign in</a>
+    </nav>
+  </div>
+</footer>
+
+<script type="module" src="/js/landing.js"></script>
+</body>
+</html>

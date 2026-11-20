@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-site="{{SITE}}" data-place="{{PLACE}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found · {{SITE}}</title>
+<meta name="description" content="This page does not exist.">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="site-header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="/" id="brandLink" aria-label="{{SITE}} home"></a>
+    <div class="site-actions">
+      <a class="navlink" href="/app?mode=login" id="loginLink">Sign in</a>
+      <a class="btn btn-sm btn-outline" href="/app?mode=signup" id="signupLink">Create an account</a>
+    </div>
+  </div>
+</header>
+
+<main class="lost">
+  <p class="code">404</p>
+  <h1>Nothing hangs here</h1>
+  <p>This page doesn't exist, or it was moved. If someone sent you a shared link, check you have all of it.</p>
+  <div class="actions">
+    <a class="btn btn-primary pill" href="/">Go to the front door</a>
+    <a class="textlink" href="/app">Your collection</a>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="brand" href="/" id="footerBrand" aria-label="{{SITE}} home"></a>
+    <span>Designed and built in {{PLACE}}</span>
+    <nav aria-label="Footer">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/app?mode=login">Sign in</a>
+    </nav>
+  </div>
+</footer>
+<script type="module" src="/js/page.js"></script>
+</body>
+</html>
